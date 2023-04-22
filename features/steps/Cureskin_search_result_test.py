@@ -5,4 +5,4 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @then('Verify the first product in Sunscreen')
 def verify_first_sunscreen_product(context):
-    context.app.search_result_page.verify_sunscreen_product
+    context.app.search_result_page.verify_sunscreen_product()

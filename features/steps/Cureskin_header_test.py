@@ -18,9 +18,6 @@ def click_sunscreen_tab(context):
 def click_search_button(context):
     context.app.header.click_search_button()
 
-#@when('Enter a product name {product} that does not exist to search box')
-#def input_not_product_search(context, text):
-    #context.app.header.
-
-
-
+@when('Enter a product name {text} that does not exist to search box')
+def input_not_product_search(context, text):
+    context.app.header.input_text_not_product(text)

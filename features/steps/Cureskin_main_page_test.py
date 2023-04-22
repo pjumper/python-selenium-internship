@@ -7,3 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 @given('Open Cureskin page')
 def open_cureskin_page(context):
     context.app.main_page.open_main()
+
+
+@when('Close popup')
+def close_popup_coupon(context):
+    context.app.main_page.close_popup()

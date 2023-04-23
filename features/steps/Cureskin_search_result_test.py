@@ -15,6 +15,11 @@ def click_no_results_dropdown(context):
     context.app.search_result_page.click_no_results_dropdown()
 
 
+@when('Click on product')
+def click_on_product(context):
+    context.app.search_result_page.click_on_product()
+
+
 @then('Verify the first product in Sunscreen')
 def verify_first_sunscreen_product(context):
     context.app.search_result_page.verify_sunscreen_product()

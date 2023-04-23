@@ -21,3 +21,9 @@ def click_search_button(context):
 @when('Enter a product name {text} that does not exist to search box')
 def input_not_product_search(context, text):
     context.app.header.input_text_not_product(text)
+
+
+@when('Enter a product name {text}')
+def input_product_name(context, text):
+    context.app.header.input_product_name(text)
+

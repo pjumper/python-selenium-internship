@@ -10,6 +10,8 @@ class SearchResultPage(Page):
     SEARCH_NO_RESULTS = (By.XPATH, "//span[contains(text(), '0 results found') and @class='hidden']")
     CLICK_NO_RESULTS_DROPDOWN = (By.CSS_SELECTOR, '.predictive-search__item--term')
     NO_RESULTS_MESSAGE = (By.ID, 'ProductCount')
+    CLICK_PRODUCT = (By.CSS_SELECTOR, '#predictive-search-option-1')
+
     def verify_sunscreen_product(self, *locator):
         self.click(*self.SUNSCREEN_PRODUCT)
 
@@ -24,4 +26,7 @@ class SearchResultPage(Page):
         actual_amount = self.driver.find_element(*self.NO_RESULTS_MESSAGE).text
         assert expected_amount in actual_amount, f'Expected {expected_amount} and got {actual_amount}'
 
+
+    def click_on_product(self, *locator):
+        self.click(*self.CLICK_PRODUCT)
 

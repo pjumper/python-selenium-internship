@@ -12,7 +12,7 @@ class Header(Page):
     CLICK_SUNSCREEN_TAB = (By.XPATH, "//a[@href='/collections/sun-protection']/span[text()='Sunscreens']")
     CLICK_SEARCH_BUTTON = (By.CSS_SELECTOR, "[aria-label='Search our site'] svg.icon-search")
     INPUT_PRODUCT = (By.CSS_SELECTOR, "input#Search-In-Modal")
-
+    CLICK_SHOP_ALL = (By.CSS_SELECTOR, "a[href='/collections/all'] span")
 
     def click_shop_by_product(self, *locator):
         self.click(*self.SHOP_BY_PRODUCT)
@@ -29,4 +29,8 @@ class Header(Page):
 
     def input_product_name(self, text):
         self.input_text(text, *self.INPUT_PRODUCT)
+
+
+    def click_shop_all(self, *locator):
+        self.wait_for_element_click(*self.CLICK_SHOP_ALL)
 

@@ -27,3 +27,8 @@ def input_not_product_search(context, text):
 def input_product_name(context, text):
     context.app.header.input_product_name(text)
 
+
+@when('Click on Shop All section')
+def click_shop_all(context):
+    context.app.header.click_shop_all()
+

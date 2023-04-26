@@ -18,3 +18,4 @@ Feature: Cureskin Product Search
     When Verify no results returned on the drop-down
     And Click on search button on the drop-down
     Then Verify No results 0 found message is shown
+

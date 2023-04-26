@@ -20,9 +20,9 @@ def click_on_product(context):
     context.app.search_result_page.click_on_product()
 
 
-@then('Verify the first product in Sunscreen')
-def verify_first_sunscreen_product(context):
-    context.app.search_result_page.verify_sunscreen_product()
+@then('Verify the first product in {expected_result}')
+def verify_first_sunscreen_product(context, expected_result):
+    context.app.search_result_page.verify_sunscreen_product(expected_result)
 
 
 @then('Verify No results {expected_amount} found message is shown')

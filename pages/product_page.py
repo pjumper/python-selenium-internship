@@ -14,5 +14,5 @@ class ProductPage(Page):
     def hover_price_filter(self):
         price_filter = self.find_element(*self.PRICE_FILTER)
         actions = ActionChains(self.driver)
-        actions.drag_and_drop_by_offset(price_filter, -100, 0)
+        actions.drag_and_drop_by_offset(price_filter, -150, 0)
         actions.perform()

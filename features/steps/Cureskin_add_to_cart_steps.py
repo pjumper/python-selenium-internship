@@ -8,9 +8,9 @@ def click_add_to_cart(context):
     context.app.cart_page.click_add_to_cart()
 
 
-@when('Verify product in cart')
-def verify_product_in_cart(context):
-    context.app.cart_page.verify_product_in_cart()
+@when('Verify {expected_result} in cart')
+def verify_product_in_cart(context, expected_result):
+    context.app.cart_page.verify_product_in_cart(expected_result)
 
 
 @when('Delete product from cart')

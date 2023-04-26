@@ -9,7 +9,7 @@ Feature: Cureskin Add to Cart Test
     When Enter a product name Hydration Gel
     And Click on product
     And Click add to cart
-    When Verify product in cart
+    When Verify Hydration Gel in cart
     And Delete product from cart
     Then Verify cart is empty
 

@@ -7,5 +7,5 @@ Feature: Main Page Tests
     When Close popup
     When Click on Shop All section
     And Adjust the price filter so change in number of product
-    #Then Verify number of product changes
-    #And Verify product displayed are within the price filter
+    Then Verify number of product changes
+    And Verify product displayed are within the price filter

@@ -29,5 +29,13 @@ class Page:
     def wait_for_element_appear(self, *locator):
         return self.wait.until(EC.presence_of_element_located(locator))
 
+    def wait_for_the_element_to_be_visible(self, *locator):
+        return self.wait.until(EC.element_to_be_clickable())
     def verify_url_contains_query(self, query):
         self.wait.until(EC.url_contains(query))
+
+    def wait_for_visibility_of_element(self, *locator):
+        return self.wait.until(EC.visibility_of_element_located())
+
+    def wait_for_text_to_be_present(self, *locator):
+        return self.wait.until(EC.text_to_be_present_in_element())

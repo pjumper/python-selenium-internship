@@ -15,7 +15,7 @@ Feature: Cureskin Product Search
     When Close popup
     When Click on search button
     And Enter a product name Lotion that does not exist to search box
-    When Verify no results returned on the drop-down
-    And Click on search button on the drop-down
+    When Verify no results 0 returned on the drop-down
+    #And Click on search button on the drop-down
     Then Verify No results 0 found message is shown
 

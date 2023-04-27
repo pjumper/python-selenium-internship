@@ -5,10 +5,11 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 
-@when('Verify no results returned on the drop-down')
-def verify_no_result_found(context):
-    context.app.search_result_page.verify_no_results()
-
+@when('Verify no results {expected_result} returned on the drop-down')
+def verify_no_result_found(context, expected_result):
+    # from time import sleep
+    # sleep(10)
+    context.app.search_result_page.verify_no_results(expected_result)
 
 @when('Click on search button on the drop-down')
 def click_no_results_dropdown(context):

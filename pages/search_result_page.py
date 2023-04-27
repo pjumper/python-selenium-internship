@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class SearchResultPage(Page):
     SUNSCREEN_PRODUCT = (By.XPATH, "//a[@href='/collections/sun-protection/products/sunscreen-spf-30' and @class='full-unstyled-link']")
-    SEARCH_NO_RESULTS = (By.XPATH, "//span[contains(text(), '0 results found') and @class='hidden']")
+    SEARCH_NO_RESULTS = (By.ID, 'ProductCount')
     CLICK_NO_RESULTS_DROPDOWN = (By.CSS_SELECTOR, '.predictive-search__item--term')
     NO_RESULTS_MESSAGE = (By.ID, 'ProductCount')
     CLICK_PRODUCT = (By.CSS_SELECTOR, '#predictive-search-option-1')
@@ -18,9 +18,10 @@ class SearchResultPage(Page):
         assert expected_result in actual_result, f'Expected {expected_result} and got {actual_result}'
 
 
-    def verify_no_results(self, *locator):
-        no_result = self.driver.find_element(*self.SEARCH_NO_RESULTS)
-        assert no_result, f'Result is 0'
+    def verify_no_results(self, expected_result):
+        actual_result = self.wait_for_element_appear(*self.SEARCH_NO_RESULTS).text
+        print(actual_result)
+        assert expected_result in str(actual_result), f'Expected {expected_result} and got {actual_result}'
 
     def click_no_results_dropdown(self, *locator):
         self.click(*self.CLICK_NO_RESULTS_DROPDOWN)

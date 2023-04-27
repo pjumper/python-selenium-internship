@@ -21,6 +21,8 @@ def click_search_button(context):
 @when('Enter a product name {text} that does not exist to search box')
 def input_not_product_search(context, text):
     context.app.header.input_text_not_product(text)
+    context.driver.find_element(By.CSS_SELECTOR, '.predictive-search__item--term.button.button--small.button--full-width').click()
+
 
 
 @when('Enter a product name {text}')

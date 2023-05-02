@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
+from time import sleep
 
 class MainPage(Page):
 
@@ -10,3 +11,4 @@ class MainPage(Page):
 
     def close_popup(self):
         self.wait_for_element_click(*self.CLOSE_POPUP)
+        sleep(5)
